@@ -14,6 +14,13 @@ function marcarComoFeita(event) {
     };
 }
 
+function deletarTarefa(event) {
+    const deleteButton = event.target;
+    const tarefa = deleteButton.closest("li");
+
+    tarefa.remove();
+}
+
 form.addEventListener("submit", event => {
     event.preventDefault();
 
@@ -28,6 +35,7 @@ form.addEventListener("submit", event => {
 
     const deleteButton = document.createElement("button");
     deleteButton.innerText = "Deletar";
+    deleteButton.addEventListener("click", deletarTarefa);
 
     tarefa.append(checkbox);
     tarefa.append(span);
