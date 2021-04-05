@@ -3,6 +3,17 @@ const input = document.querySelector("#input-tarefa");
 const aFazer = document.querySelector("#a-fazer");
 const feitas = document.querySelector("#feitas");
 
+function marcarComoFeita(event) {
+    const checkbox = event.target;
+    const tarefa = checkbox.closest("li");
+
+    if(checkbox.checked) {
+        feitas.append(tarefa);
+    } else {
+        aFazer.append(tarefa);
+    };
+}
+
 form.addEventListener("submit", event => {
     event.preventDefault();
 
@@ -10,6 +21,7 @@ form.addEventListener("submit", event => {
 
     const checkbox = document.createElement("input");
     checkbox.setAttribute("type", "checkbox");
+    checkbox.addEventListener("input", marcarComoFeita);
 
     const span = document.createElement("span");
     span.innerText = input.value;
