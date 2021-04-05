@@ -9,10 +9,6 @@ const botaoFeitas = document.querySelector("#botao-feitas");
 const botaoLimparFeitas = document.querySelector("#botao-limpar");
 const checkboxTodos = document.querySelector("#checkbox-todos");
 
-function atualizarCheckboxGeral() {
-
-}
-
 function atualizarContador() {
     const contagem = listaAFazer.querySelectorAll("li").length;
 
@@ -21,6 +17,19 @@ function atualizarContador() {
     } else {
         contador.innerText = `${contagem} itens a fazer`;
     };
+}
+
+function atualizarCheckboxGeral() {
+    const contagemAFazer = listaAFazer.querySelectorAll("li").length;
+    const contagemFeitas = listaFeitas.querySelectorAll("li").length;
+
+    if(contagemAFazer === 0 && contagemFeitas > 0) {
+        checkboxTodos.checked = true;
+    } else {
+        checkboxTodos.checked = false;
+    };
+
+    atualizarContador();
 }
 
 function marcarComoFeita(event) {
@@ -34,6 +43,7 @@ function marcarComoFeita(event) {
     };
 
     atualizarContador();
+    atualizarCheckboxGeral();
 }
 
 function deletarTarefa(event) {
@@ -43,6 +53,7 @@ function deletarTarefa(event) {
     tarefa.remove();
 
     atualizarContador();
+    atualizarCheckboxGeral();
 }
 
 form.addEventListener("submit", event => {
@@ -70,6 +81,7 @@ form.addEventListener("submit", event => {
     input.value = "";
     
     atualizarContador();
+    atualizarCheckboxGeral();
 })
 
 checkboxTodos.addEventListener("click", () => {
@@ -93,6 +105,8 @@ checkboxTodos.addEventListener("click", () => {
             checkbox.checked = false;
         };
     };
+
+    atualizarContador();
 })
 
 botaoTodas.addEventListener("click", () => {
@@ -124,7 +138,10 @@ botaoFeitas.addEventListener("click", () => {
 
 botaoLimparFeitas.addEventListener("click", () => {
     const completas = listaFeitas.querySelectorAll("li");
+    
     for(tarefa of completas) {
         tarefa.remove();
     };
+
+    atualizarCheckboxGeral();
 })
