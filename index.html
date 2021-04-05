@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas 2.0</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <h1>Tarefinhas 2.0</h1>
+
+    <div class="card">
+        <form>
+            <input id="checkbox-todos" type="checkbox">
+            <input id="input-tarefa" placeholder="O que precisa ser feito?" aria-label="O que precisa ser feito?">
+        </form>
+
+            <ul class="tarefas" id="a-fazer">
+           <!-- <li>
+                    <input type="checkbox">
+                    <span>Fazer HTML e CSS!</span>
+                    <button>Deletar</button>
+                </li> -->
+            </ul>
+
+            <ul class="tarefas" id="feitas">
+           <!-- <li>
+                    <input type="checkbox" checked>
+                    <span>HTML e CSS feito!</span>
+                    <button>Deletar</button>
+                </li> -->
+            </ul>
+
+        <div class="rodape">
+            <div id="contador">0 itens a fazer</div>
+
+            <div class="filtros">
+                <button id="botao-todas" class="ativo">Todas</button>
+                <button id="botao-a-fazer">A fazer</button>
+                <button id="botao-feitas">Completadas</button>
+            </div>
+
+            <div>
+                <button id="botao-limpar">Limpar completadas</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
