@@ -6,6 +6,12 @@ const contador = document.querySelector("#contador");
 const botaoTodas = document.querySelector("#botao-todas");
 const botaoAFazer = document.querySelector("#botao-a-fazer");
 const botaoFeitas = document.querySelector("#botao-feitas");
+const botaoLimparFeitas = document.querySelector("#botao-limpar");
+const checkboxTodos = document.querySelector("#checkbox-todos");
+
+function atualizarCheckboxGeral() {
+
+}
 
 function atualizarContador() {
     const contagem = listaAFazer.querySelectorAll("li").length;
@@ -66,6 +72,29 @@ form.addEventListener("submit", event => {
     atualizarContador();
 })
 
+checkboxTodos.addEventListener("click", () => {
+
+    if(checkboxTodos.checked) {
+        const aFazer = listaAFazer.querySelectorAll("li");
+
+        for(const tarefa of aFazer) {
+            listaFeitas.append(tarefa);
+
+            const checkbox = tarefa.querySelector("input");
+            checkbox.checked = true;
+        };
+    } else {
+        const feitas = listaFeitas.querySelectorAll("li");
+
+        for(const tarefa of feitas) {
+            listaAFazer.append(tarefa);
+
+            const checkbox = tarefa.querySelector("input");
+            checkbox.checked = false;
+        };
+    };
+})
+
 botaoTodas.addEventListener("click", () => {
     listaAFazer.removeAttribute("hidden");
     listaFeitas.removeAttribute("hidden");
@@ -91,4 +120,11 @@ botaoFeitas.addEventListener("click", () => {
     botaoAFazer.classList.remove("ativo");
     botaoFeitas.classList.add("ativo");
     botaoTodas.classList.remove("ativo");
+})
+
+botaoLimparFeitas.addEventListener("click", () => {
+    const completas = listaFeitas.querySelectorAll("li");
+    for(tarefa of completas) {
+        tarefa.remove();
+    };
 })
