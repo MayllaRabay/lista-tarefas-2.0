@@ -2,6 +2,17 @@ const form = document.querySelector("form");
 const input = document.querySelector("#input-tarefa");
 const aFazer = document.querySelector("#a-fazer");
 const feitas = document.querySelector("#feitas");
+const contador = document.querySelector("#contador");
+
+function atualizarContador() {
+    const contagem = aFazer.querySelectorAll("li").length;
+
+    if(contagem === 1) {
+        contador.innerText = "1 item a fazer";
+    } else {
+        contador.innerText = `${contagem} itens a fazer`;
+    };
+}
 
 function marcarComoFeita(event) {
     const checkbox = event.target;
@@ -12,6 +23,8 @@ function marcarComoFeita(event) {
     } else {
         aFazer.append(tarefa);
     };
+
+    atualizarContador();
 }
 
 function deletarTarefa(event) {
@@ -19,6 +32,8 @@ function deletarTarefa(event) {
     const tarefa = deleteButton.closest("li");
 
     tarefa.remove();
+
+    atualizarContador();
 }
 
 form.addEventListener("submit", event => {
@@ -44,4 +59,6 @@ form.addEventListener("submit", event => {
     aFazer.append(tarefa);
 
     input.value = "";
+    
+    atualizarContador();
 })
