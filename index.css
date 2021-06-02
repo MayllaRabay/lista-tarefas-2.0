@@ -2,82 +2,129 @@
 
 * {
 	box-sizing: border-box;
-    font-family: 'Zilla Slab', serif;
+  font-family: 'Zilla Slab', serif;
 }
+
 body {
-	margin: 1em;
+	align-items: center;
 	background-color: #f5f5f5;
+	background-image: url(./assets/background.png);
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-    background-image: url(assets/geometric-background.jpg);
+	margin: 1rem;
 }
-h1 {
-	color: palevioletred;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    background-color: white;
+
+main {
+	height: 75vh;
 }
+
 .card {
 	background-color: white;
 	padding: 1em;
 	box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
-                0 2px 4px rgba(0,0,0,0.07), 
-                0 4px 8px rgba(0,0,0,0.07), 
-                0 8px 16px rgba(0,0,0,0.07),
-                0 16px 32px rgba(0,0,0,0.07), 
-                0 32px 64px rgba(0,0,0,0.07);
+							0 2px 4px rgba(0,0,0,0.07), 
+							0 4px 8px rgba(0,0,0,0.07), 
+							0 8px 16px rgba(0,0,0,0.07),
+							0 16px 32px rgba(0,0,0,0.07), 
+							0 32px 64px rgba(0,0,0,0.07);
 }
+
+h1 {
+	color: palevioletred;
+  text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+}
+
 form {
-	display: flex;
 	align-items: center;
-    margin-bottom: 1em;
+	display: flex;
+  margin-bottom: 1rem;
 }
+
 #input-tarefa, li span {
-	font-size: 1.3em;
+	font-size: 1.3rem;
 }
+
 #input-tarefa {
-	margin-left: 0.5em;
+	margin-left: 0.5rem;
 	flex-grow: 1;
 }
-.rodape {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-    font-size: 0.95em;
-    margin-top: 1em;
-}
-.rodape #contador {
-    margin: 0.5em;
-}
+
 button {
-	border: 1px solid transparent;
 	background-color: transparent;
-	padding: 0.2em 0.3em;
+	border: 1px solid transparent;
+	padding: 0.2rem 0.3rem;
 }
+
+.filtros {
+	margin: 0 1rem;
+}
+
 .filtros button.ativo {
 	border: 1px solid palevioletred;
 }
+
+#botao-limpar {
+	display: flex;
+	align-items: center;
+}
+
 ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
+
 li {
-	display: flex;
 	align-items: center;
-	margin: 0.5em 0;
+	display: flex;
+	margin: 0.5rem 0;
 }
+
 li:hover button {
 	visibility: visible;
 }
+
 li input {
-	margin-right: 0.5em;
+	margin-right: 0.5rem;
 }
+
 li button {
-	visibility: hidden;
-	margin-left: auto;
 	color: palevioletred;
+	margin-left: auto;
+	visibility: hidden;
 }
+
 #feitas li span {
 	text-decoration: line-through;
+}
+
+.card__footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.95rem;
+	margin-top: 1rem;
+}
+
+.card__footer #contador {
+	margin: 0.5rem;
+}
+
+footer p {
+	color: palevioletred;
+	font-size: 1rem;
+	font-weight: bold;
+	margin-bottom: auto;
+  text-shadow: 0.5px 0.5px 0px rgba(0,0,0,0.5);
+}
+
+footer a {
+	color: palevioletred;
+	text-decoration: none;
+}
+
+footer a:hover {
+	color: rgb(206, 69, 115);
+	cursor: pointer;
+	text-decoration: underline;
 }
