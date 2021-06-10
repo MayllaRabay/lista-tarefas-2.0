@@ -63,9 +63,18 @@ button {
 	border: 1px solid palevioletred;
 }
 
+.filtros button:hover {
+	cursor: pointer;
+}
+
 #botao-limpar {
 	display: flex;
 	align-items: center;
+}
+
+#botao-limpar:hover {
+	color: rgb(206, 69, 115);
+	cursor: pointer;
 }
 
 ul {
