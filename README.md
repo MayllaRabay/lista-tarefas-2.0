@@ -30,6 +30,12 @@
   - ![JavaScript](https://img.shields.io/badge/-JavaScript-orange)
   - ![DOM](https://img.shields.io/badge/-DOM-lightgrey)
 
-Feito com ❤️ por Maylla Rabay 👋 [Entre em contato!](https://www.linkedin.com/in/mayllarabay/)
-
 <img src="./assets/screen-1.png" />
+
+## :bowtie: Autor
+<a href="https://github.com/mayllarabay/">
+ <img style="border-radius: 50%" src="https://avatars.githubusercontent.com/u/68441361?v=4" 
+ width="100px" alt="" />
+</a>
+
+Feito com ❤️ por Maylla Rabay 👋 [Entre em contato!](https://www.linkedin.com/in/mayllarabay/)
